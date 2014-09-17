@@ -20,7 +20,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       FN3,  FN4,  FN5,  NO,   NO,   NO,   NO,   NO,   NO,   NO,   NO,   PWR,
       NO,   NO,   NO,   UNDO, NO,   NO,   NO,   NO,   AGAIN, NO,  NO,   SLEP,
       NO,   NO,   NO,   NO,   NO,   NO,   NO,   NO,   NO,   NO,   NO,   WAKE,
-      NO,   NO,   NO,   NO,   NO,   NO,         NO,   NO,   NO,   NO,   NO),
+      TRNS, TRNS, TRNS, TRNS, TRNS, TRNS,       TRNS, MSTP, MPRV, MNXT, MPLY),
     KEYMAP( /* 1: Colemak */
       Q,    W,    F,    P,    G,    QUOT, BSLS, J,    L,    U,    Y,   SCLN,
       A,    R,    S,    T,    D,    ESC,  TAB,  H,    N,    E,    I,   O,
@@ -33,9 +33,8 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       LCTL, LALT, LGUI, LSFT, FN1,  SPC,        FN2,  LEFT, DOWN, UP,  RGHT),
 };
 const uint16_t PROGMEM fn_actions[] = {
-    [0] = ACTION_LAYER_MOMENTARY(5), // to fn1+fn2 overlay (not implemented yet)
-    [1] = ACTION_LAYER_MOMENTARY(1), // to fn1 overlay
-    [2] = ACTION_LAYER_MOMENTARY(2), // to fn2 overlay
+    [1] = ACTION_LAYER_BIT_XOR(1, 0b01, ON_BOTH), // to fn1 overlay
+    [2] = ACTION_LAYER_BIT_XOR(1, 0b10, ON_BOTH), // to fn2 overlay
     [3] = ACTION_DEFAULT_LAYER_SET(0),  // set Qwerty layout
     [4] = ACTION_DEFAULT_LAYER_SET(1),  // set Colemak layout
     [5] = ACTION_DEFAULT_LAYER_SET(2),  // set Dvorak layout
