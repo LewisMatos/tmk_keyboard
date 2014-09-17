@@ -26,14 +26,14 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11, F12,
       MENU, CUT, COPY, PASTE, DEL, TRNS, TRNS, CAPS, INS, PSCR, SLCK, PAUS,
       TRNS, TRNS, TRNS, TRNS, FN0, TRNS, TRNS, MUTE, VOLD, VOLU, MPLY),
-    KEYMAP( /* 5: fn1+fn2 */
+    KEYMAP( /* 5: future fn1+fn2 */
       FN3, FN4, FN5, NO, NO, NO, NO, NO, NO, NO, NO, PWR,
       NO, NO, NO, UNDO, NO, NO, NO, NO, AGAIN, NO, NO, SLEP,
       NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, WAKE,
       NO, NO, NO, NO, NO, NO, NO, NO, NO, NO, NO)
 };
 const uint16_t PROGMEM fn_actions[] = {
-    [0] = ACTION_LAYER_MOMENTARY(5), // fo fn1+fn2 overlay
+    [0] = ACTION_LAYER_MOMENTARY(5), // to fn1+fn2 overlay (not implemented yet)
     [1] = ACTION_LAYER_MOMENTARY(3), // to fn1 overlay
     [2] = ACTION_LAYER_MOMENTARY(4), // to fn2 overlay
     [3] = ACTION_DEFAULT_LAYER_SET(0),  // set Qwerty layout
