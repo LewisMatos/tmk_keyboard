@@ -2,19 +2,19 @@
 
 const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = KEYMAP( /* Native */
-      Q,    W,    E,    R,    T,    QUOT, BSLS, Y,    U,    I,    O,   P,
-      A,    S,    D,    F,    G,    ESC,  TAB,  H,    J,    K,    L,   SCLN,
-      Z,    X,    C,    V,    B,    BSPC, ENT,  N,    M,    COMM, DOT, SLSH,
+      Q,    W,    E,    R,    T,    ESC,  BSPC, Y,    U,    I,    O,   P,
+      A,    S,    D,    F,    G,    QUOT, BSLS, H,    J,    K,    L,   SCLN,
+      Z,    X,    C,    V,    B,    TAB,  ENT,  N,    M,    COMM, DOT, SLSH,
       LCTL, LALT, LGUI, LSFT, FN1,  SPC,        FN2,  LEFT, DOWN, UP,  RGHT),
     [1] = KEYMAP( /* QWERTY->Colemak */
-      Q,    W,    F,    P,    G,    QUOT, BSLS, J,    L,    U,    Y,   SCLN,
-      A,    R,    S,    T,    D,    ESC,  TAB,  H,    N,    E,    I,   O,
-      Z,    X,    C,    V,    B,    BSPC, ENT,  K,    M,    COMM, DOT, SLSH,
+      Q,    W,    F,    P,    G,    ESC,  BSPC, J,    L,    U,    Y,   SCLN,
+      A,    R,    S,    T,    D,    QUOT, BSLS, H,    N,    E,    I,   O,
+      Z,    X,    C,    V,    B,    TAB,  ENT,  K,    M,    COMM, DOT, SLSH,
       LCTL, LALT, LGUI, LSFT, FN1,  SPC,        FN2,  LEFT, DOWN, UP,  RGHT),
     [2] = KEYMAP( /* 2: QWERTY->Dvorak */
-      QUOT, COMM, DOT,  P,    Y,    SLSH, BSLS, F,    G,    C,    R,   L,
-      A,    O,    E,    U,    I,    ESC,  TAB,  D,    H,    T,    N,   S,
-      SCLN, Q,    J,    K,    X,    BSPC, ENT,  B,    M,    W,    V,   Z,
+      QUOT, COMM, DOT,  P,    Y,    ESC,  BSPC, F,    G,    C,    R,   L,
+      A,    O,    E,    U,    I,    SLSH, BSLS, D,    H,    T,    N,   S,
+      SCLN, Q,    J,    K,    X,    TAB,  ENT,  B,    M,    W,    V,   Z,
       LCTL, LALT, LGUI, LSFT, FN1,  SPC,        FN2,  LEFT, DOWN, UP,  RGHT),
     [4] = KEYMAP( /* fn1 */
       FN10, FN11, FN12, FN13, FN14, FN15, FN16, FN17, FN18, FN19, FN20, FN21,
@@ -33,11 +33,11 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       TRNS, TRNS, TRNS, TRNS, FN4,  TRNS,       FN5,  MSTP, MPRV, MNXT, MPLY),
 };
 const uint16_t PROGMEM fn_actions[] = {
-    [1] = ACTION_LAYER_BIT_XOR(1, 0b001, ON_BOTH), // fn1
-    [2] = ACTION_LAYER_BIT_XOR(1, 0b010, ON_BOTH), // fn2
-    [3] = ACTION_LAYER_BIT_OR( 1, 0b111, ON_BOTH), // fn1+fn2
-    [4] = ACTION_LAYER_BIT_XOR(1, 0b101, ON_BOTH), // fn1+fn2 -> fn2
-    [5] = ACTION_LAYER_BIT_XOR(1, 0b110, ON_BOTH), // fn1+fn2 -> fn1
+    [1] = ACTION_LAYER_BIT_XOR(1, 0b0001, ON_BOTH), // swap fn1
+    [2] = ACTION_LAYER_BIT_XOR(1, 0b0010, ON_BOTH), // swap fn2
+    [3] = ACTION_LAYER_BIT_OR( 1, 0b0111, ON_BOTH), // + fn1 + fn2 + fn1+2
+    [4] = ACTION_LAYER_BIT_AND(1, 0b1110, ON_BOTH), // - fn1
+    [5] = ACTION_LAYER_BIT_AND(1, 0b1101, ON_BOTH), // - fn2
 
     [7] = ACTION_DEFAULT_LAYER_SET(0),  // set Qwerty layout
     [8] = ACTION_DEFAULT_LAYER_SET(1),  // set Colemak layout
