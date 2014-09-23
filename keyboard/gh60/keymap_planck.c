@@ -2,34 +2,34 @@
 
 const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = KEYMAP( /* Native */
-      Q,    W,    E,    R,    T,    ESC,  BSPC, Y,    U,    I,    O,   P,
-      A,    S,    D,    F,    G,    QUOT, BSLS, H,    J,    K,    L,   SCLN,
-      Z,    X,    C,    V,    B,    TAB,  ENT,  N,    M,    COMM, DOT, SLSH,
-      LCTL, LALT, LGUI, LSFT, FN1,  SPC,        FN2,  LEFT, DOWN, UP,  RGHT),
+      ESC,  Q,    W,    E,    R,    T,    Y,    U,    I,    O,   P,    BSPC,
+      BSLS, A,    S,    D,    F,    G,    H,    J,    K,    L,   SCLN, QUOT,
+      TAB,  Z,    X,    C,    V,    B,    N,    M,    COMM, DOT, SLSH, ENT,
+      LGUI, LCTL, LALT, LSFT, FN1,  SPC,        FN2,  LEFT, DOWN, UP,  RGHT),
     [1] = KEYMAP( /* QWERTY->Colemak */
-      Q,    W,    F,    P,    G,    ESC,  BSPC, J,    L,    U,    Y,   SCLN,
-      A,    R,    S,    T,    D,    QUOT, BSLS, H,    N,    E,    I,   O,
-      Z,    X,    C,    V,    B,    TAB,  ENT,  K,    M,    COMM, DOT, SLSH,
-      LCTL, LALT, LGUI, LSFT, FN1,  SPC,        FN2,  LEFT, DOWN, UP,  RGHT),
+      ESC,  Q,    W,    F,    P,    G,    J,    L,    U,    Y,   SCLN, BSPC,
+      BSLS, A,    R,    S,    T,    D,    H,    N,    E,    I,   O,    QUOT,
+      TAB,  Z,    X,    C,    V,    B,    K,    M,    COMM, DOT, SLSH, ENT,
+      LGUI, LCTL, LALT, LSFT, FN1,  SPC,        FN2,  LEFT, DOWN, UP,  RGHT),
     [2] = KEYMAP( /* 2: QWERTY->Dvorak */
-      QUOT, COMM, DOT,  P,    Y,    ESC,  BSPC, F,    G,    C,    R,   L,
-      A,    O,    E,    U,    I,    SLSH, BSLS, D,    H,    T,    N,   S,
-      SCLN, Q,    J,    K,    X,    TAB,  ENT,  B,    M,    W,    V,   Z,
-      LCTL, LALT, LGUI, LSFT, FN1,  SPC,        FN2,  LEFT, DOWN, UP,  RGHT),
+      ESC,  QUOT, COMM, DOT,  P,    Y,    F,    G,    C,    R,   L,    BSPC,
+      BSLS, A,    O,    E,    U,    I,    D,    H,    T,    N,   S,    SLSH,
+      TAB,  SCLN, Q,    J,    K,    X,    B,    M,    W,    V,   Z,    ENT,
+      LGUI, LCTL, LALT, LSFT, FN1,  SPC,        FN2,  LEFT, DOWN, UP,  RGHT),
     [4] = KEYMAP( /* fn1 */
-      FN10, FN11, FN12, FN13, FN14, FN15, FN16, FN17, FN18, FN19, FN20, FN21,
-      1,    2,    3,    4,    5,    MINS, EQL,  6,    7,    8,    9,    0,
-      NO,   NO,   GRV,  FN22, NO,   TRNS, TRNS, NO,   LBRC, RBRC, FN23, FN24,
+      FN20, FN10, FN11, FN12, FN13, FN14, FN15, FN16, FN17, FN18, FN19, FN21,
+      MINS, 1,    2,    3,    4,    5,    6,    7,    8,    9,    0,    EQL,
+      NO,   NO,   NO,   GRV,  FN22, NO,   NO,   LBRC, RBRC, FN23, FN24, TRNS,
       TRNS, TRNS, TRNS, TRNS, FN1,  TRNS,       FN3,  HOME, PGDN, PGUP, END),
     [5] = KEYMAP( /* fn2 */
       F13,  F14,  F15,  F16,  F17,  F18,  F19,  F20,  F21,  F22,  F23,  F24,
       F1,   F2,   F3,   F4,   F5,   F6,   F7,   F8,   F9,   F10,  F11,  F12,
-      NO,   NO,   NO,   NO,   DEL,  TRNS, TRNS, CAPS, INS,  PSCR, SLCK, PAUS,
+      TRNS, DEL,  CUT, COPY, PASTE, MENU, CAPS, INS,  PSCR, SLCK, PAUS, TRNS,
       TRNS, TRNS, TRNS, TRNS, FN3,  TRNS,       FN2,  MUTE, VOLD, VOLU, MPLY),
     [6] = KEYMAP( /* fn1+fn2 */
       FN7,  FN8,  FN9,  NO,   NO,   NO,   NO,   NO,   NO,   NO,   NO,   PWR,
-      NO,   NO,   NO,   UNDO, NO,   NO,   NO,   NO,   AGAIN, NO,  NO,   SLEP,
-      NO,   NO,   NO,   NO,   NO,   NO,   NO,   NO,   NO,   NO,   NO,   WAKE,
+      NO,   NO,   NO,   NO,   UNDO, NO,   NO,  AGAIN, NO,   NO,   NO,   SLEP,
+      TRNS, NO,   NO,   NO,   NO,   NO,   NO,   NO,   NO,   NO,   NO,   WAKE,
       TRNS, TRNS, TRNS, TRNS, FN4,  TRNS,       FN5,  MSTP, MPRV, MNXT, MPLY),
 };
 const uint16_t PROGMEM fn_actions[] = {
