@@ -18,7 +18,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       LCTL, LALT, LGUI, LSFT, FN1,  SPC,        FN2,  LEFT, DOWN, UP,  RGHT),
     [4] = KEYMAP( /* fn1 */
       FN10, FN11, FN12, FN13, FN14, FN15, FN16, FN17, FN18, FN19, FN20, FN21,
-      1,    2,    3,    4,    5,    6,    7,    8,    9,    0,    MINS, EQL,
+      1,    2,    3,    4,    5,    MINS, EQL,  6,    7,    8,    9,    0,
       NO,   NO,   GRV,  FN22, NO,   TRNS, TRNS, NO,   LBRC, RBRC, FN23, FN24,
       TRNS, TRNS, TRNS, TRNS, FN1,  TRNS,       FN3,  HOME, PGDN, PGUP, END),
     [5] = KEYMAP( /* fn2 */
